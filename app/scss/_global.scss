@@ -3,12 +3,51 @@ body {
 	height: 100%;
 }
 
+html {
+	font-size: 62.5%;
+}
+
+body {
+	font-size: 1.8rem;
+	line-height: 3rem;
+	color: $text-darkBlue;
+	@extend %OpenSans-400;
+}
+
 .main {
 	flex-grow: 1;
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 96rem;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 1rem;
+}
+
+.title {
+	font-size: 5rem;
+	line-height: 6.8rem;
+	color: $text-darkBlue;
+	@extend %OpenSans-300;
+	text-align: center;
+}
+
+.subtitle {
+	font-size: 3rem;
+	line-height: 3rem;
+	@extend %OpenSans-700;
+}
+
+.btn {
+	padding: 2rem 3.1rem;
+	font-size: 2.1rem;
+	color: $color-white;
+	@extend %OpenSans-700;
+	border: 0.3rem solid #FFFFFF;
+	border-radius: 2.9rem;
+	display: inline-block;
+}
+
+.display-block {
+	display: block;
 }

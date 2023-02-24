@@ -1,4 +1,3 @@
-// Определяем переменные Gulp
 const {
 	src,
 	dest,
@@ -8,73 +7,74 @@ const {
 } = require('gulp');
 
 
-// Подключие модулей
-const scss = require('gulp-sass')(require('sass')); // подключаем Sass пакет
-const concat = require('gulp-concat'); // подключаем gulp-concat (для конкатенации файлов)
-const browserSync = require('browser-sync').create(); // автоматическое обновление страниц
-const uglify = require('gulp-uglify'); // сжатие файлов js и библиотек
-const autoprefixer = require('gulp-autoprefixer'); // подключаем библиотеку для автоматического добавления префиксов
-const imagemin = require('gulp-imagemin'); // оптимизация изображений
-const del = require('del'); // чистка папки dist
+
+const scss = require('gulp-sass')(require('sass')); 
+const concat = require('gulp-concat'); 
+const browserSync = require('browser-sync').create(); 
+const uglify = require('gulp-uglify'); 
+const autoprefixer = require('gulp-autoprefixer'); 
+const imagemin = require('gulp-imagemin'); 
+const del = require('del'); 
 
 
-// Задачи
-function styles() { // создаем задачу
-	return src('app/scss/style.scss') // путь к расположению файла
-		.pipe(scss()) // преобразуем "sass" в css
-		.pipe(concat('style.min.css')) // собираем в один файл
-		.pipe(autoprefixer({ // создадим префиксы с помощью Autoprefixer
+
+function styles() { 
+	return src('app/scss/style.scss') 
+		.pipe(scss()) 
+		.pipe(concat('style.min.css')) 
+		.pipe(autoprefixer({ 
 			overrideBrowserslist: ['last 10 version'],
 			grid: true
 		}))
-		.pipe(dest('app/css')) // выгружаем результат в папку app/css
-		.pipe(browserSync.stream()) // обновляем страницу
+		.pipe(dest('app/css')) 
+		.pipe(browserSync.stream()) 
 }
 
 
 function scripts() {
-	return src([ // берем все необходимые библиотеки
-			'node_modules/jquery/dist/jquery.js', // берем jQuery
-			'app/js/main.js' // пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+	return src([ 
+			'node_modules/jquery/dist/jquery.js', 
+			'node_modules/slick-carousel/slick/slick.js', 
+			'app/js/main.js' 
 		])
-		.pipe(concat('main.min.js')) // собираем в один файл
-		.pipe(uglify()) // сжимаем JavaScript файлы
-		.pipe(dest('app/js')) // выгружаем готовый файл в папку app/js
+		.pipe(concat('main.min.js')) 
+		.pipe(uglify()) 
+		.pipe(dest('app/js')) 
 		.pipe(browserSync.stream())
 }
 
 
 function watching() {
-	watch(['app/scss/**/*.scss'], styles); // наблюдение за всеми файлами в папке scss
-	watch(['app/js/main.js', '!app/js/main.min.js'], scripts); // наблюдение за файлами js. ! - исключение файла
-	watch(['app/*.html']).on('change', browserSync.reload); // обновляем html на странице при изменении
+	watch(['app/scss/**/*.scss'], styles); 
+	watch(['app/js/main.js', '!app/js/main.min.js'], scripts); 
+	watch(['app/*.html']).on('change', browserSync.reload); 
 
 }
 
 
 function browsersync() {
-	browserSync.init({ // выполняем browser Sync
-		server: { // определяем параметры сервера
-			baseDir: 'app/' // указываем папку сервера
+	browserSync.init({ 
+		server: { 
+			baseDir: 'app/' 
 		},
-		notify: false, // отключаем уведомления
+		notify: false, 
 	})
 }
 
 function images() {
-	return src('app/images/**/*.*') // берём все изображения из папки app
-		.pipe(imagemin([ // сжимаем и оптимизируем изображеня
-			imagemin.gifsicle({ // сжатие GIF-изображений без потерь
+	return src('app/images/**/*.*') 
+		.pipe(imagemin([ 
+			imagemin.gifsicle({ 
 				interlaced: true
 			}),
-			imagemin.mozjpeg({ // сжатие изображений JPEG с потерями
+			imagemin.mozjpeg({ 
 				quality: 75,
 				progressive: true
 			}),
-			imagemin.optipng({ // сжатие изображений PNG без потерь
+			imagemin.optipng({ 
 				optimizationLevel: 5
 			}),
-			imagemin.svgo({ // сжатие изображений SVG без потерь
+			imagemin.svgo({ 
 				plugins: [{
 						removeViewBox: true
 					},
@@ -84,31 +84,31 @@ function images() {
 				]
 			})
 		]))
-		.pipe(dest('dist/images')) // выгружаем оптимизированные изображения в папку dist/images
+		.pipe(dest('dist/images')) 
 }
 
 
 function cleanDist() {
-	return del('dist') // удаляем всё содержимое папки "dist/"
+	return del('dist') 
 }
 
 
 
-// Финальная сбрки проекта gulp build 
+
 function build() {
-	return src([ // выбираем нужные файлы
+	return src([ 
 			'app/*.html',
 			'app/css/style.min.css',
 			'app/js/main.min.js',
 			'app/fonts/**/*',
 
 		], {
-			base: 'app' // параметр "base" сохраняет структуру проекта при копировании
+			base: 'app' 
 		})
-		.pipe(dest('dist')) // выгружаем в папку с финальной сборкой
+		.pipe(dest('dist')) 
 }
 
-// Выполнение задач
+
 exports.styles = styles
 exports.scripts = scripts;
 exports.watching = watching
@@ -116,11 +116,6 @@ exports.browsersync = browsersync
 exports.images = images
 exports.cleanDist = cleanDist
 
-// создаём задачу "build", которая последовательно выполняет нужные операции
-exports.build = series(cleanDist, styles, scripts, images, build,);
 
-// экспортируем дефолтный таск с нужным набором функций
-exports.default = parallel(styles, scripts, browsersync, watching) // задача по умолчанию, в определенной последовательности 
-
-// метод parallel запускает задачи одновременно в любой последовательности
-// метод series — выполняет задачи одна за одной в указанном порядке
+exports.build = series(cleanDist, styles, scripts, images, build, );
+exports.default = parallel(styles, scripts, browsersync, watching);

@@ -1,24 +1,340 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/style.min.css">
-	<title>Главня</title>
+	<title>Мобильное приложение Pink</title>
 </head>
 
 <body>
 
 
-	<header></header>
+	<header class="header">
+		<div class="header-top">
+			<div class="container">
+				<div class="header-top__inner">
+					<a class="logo" href="#">
+						<img class="logo__img" src="images/icon/logo.png" alt="logo">
+					</a>
+					<nav class="menu">
+						<ul class="menu__list">
+							<li class="menu__list-item">
+								<a class="menu__list-link" href="#">Главная</a>
+							</li>
+							<li class="menu__list-item">
+								<a class="menu__list-link" href="#">Фотографии</a>
+							</li>
+							<li class="menu__list-item">
+								<a class="menu__list-link" href="#">Конкурс</a>
+							</li>
+							<li class="menu__list-item">
+								<a class="menu__list-link" href="#">HTML Academy</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		<div class="header-content">
+			<div class="container">
+				<div class="header-content__inner">
+					<div class="header-content__left-wrap">
+						<h1 class="header-content__title title">
+							Взгляните<br> на жизнь<br> иначе!
+						</h1>
+						<a class="header-content__btn btn" href="#">Скачать приложение</a>
+						<div class="app-box">
+							<ul class="app-box__list">
+								<li class="app-box__item">
+									<a class="app-box__link" href="#">
+										<img class="app-box__img" src="images/icon/apple.svg" alt="приложение для Apple">
+									</a>
+								</li>
+								<li class="app-box__item">
+									<a class="app-box__link" href="#">
+										<img class="app-box__img" src="images/icon/android.svg" alt="приложение для Android">
+									</a>
+								</li>
+								<li class="app-box__item">
+									<a class="app-box__link" href="#">
+										<img class="app-box__img" src="images/icon/microsoft.svg" alt="приложение для Microsoft">
+									</a>
+								</li>
+							</ul>
+						</div>
+						<p class="header-content__text">
+							Доступно для iPhone, iPad, Android,<br> Windows Phone, OS X, Windows 8
+						</p>
+					</div>
+					<img class="header-content__img" src="images/hand-phone.png" alt="phone">
+				</div>
+			</div>
+		</div>
+	</header>
 
 	<main>
 
+		<section class="offers">
+			<div class="container">
+				<div class="offers__title-wrap">
+					<h2 class="offers__title title">
+						Устали от серости мегаполиса?<span class="display-block">Нам есть, что вам</span>
+						<span class="display-block">предложить!</span>
+					</h2>
+				</div>
+				<div class="offers__cards-wrap">
+					<div class="offers__cards">
+						<div class="offers__card">
+							<div class="offers__card-imgbox">
+								<img class="offers__card-img" src="images/offer-1.png" alt="телефон">
+							</div>
+							<div class="offers__card-content">
+								<h3 class="offers__subtitle subtitle">
+									Поднимает настроение
+								</h3>
+								<p class="offers__text text">
+									Приложение позволит вам победить осеннюю хандру и депрессию буквально в несколько кликов!
+								</p>
+							</div>
+						</div>
+						<div class="offers__card">
+							<div class="offers__card-imgbox">
+								<img class="offers__card-img" src="images/offer-2.png" alt="телефон">
+							</div>
+							<div class="offers__card-content">
+								<h3 class="offers__subtitle subtitle">
+									Меняет мир вокруг
+								</h3>
+								<p class="offers__text text">
+									Сделайте снимок и украсьте его смайликом или текстовой подписью, чтобы усилить эффект
+								</p>
+							</div>
+						</div>
+						<div class="offers__card">
+							<div class="offers__card-imgbox">
+								<img class="offers__card-img" src="images/offer-3.png" alt="телефон">
+							</div>
+							<div class="offers__card-content">
+								<h3 class="offers__subtitle subtitle">
+									Заводит новых друзей
+								</h3>
+								<p class="offers__text text">
+									Ставьте лайки, комментируйте, делитесь фотографиями с друзьями и заводите новых
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+
+		<section class="efficiency">
+			<div class="container">
+				<div class="efficiency__content">
+					<div class="efficiency__img">
+						<span class="efficiency__num">24</span>
+					</div>
+					<div class="efficiency__right-wrap">
+						<h3 class="efficiency__subtitle subtitle">
+							Эффект на 24 часа!
+						</h3>
+						<p class="efficiency__text text">
+							Британские ученые провели исследования и доказали,
+							что положительный эффект от использования приложения длится целые сутки!
+						</p>
+						<a class="efficiency__link" href="#">
+							Узнать больше об исследовании
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="slider-reviews">
+			<div class="container">
+				<div class="slider-reviews__inner">
+					<div class="slider-reviews__item">
+						<div class="slider-reviews__list">
+							<img class="slider-reviews__img" src="images/icon/quotes.svg" alt="quotes">
+							<p class="slider-reviews__text text">
+								«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+								привычные серые вещи! А еще я познакомился со своей будущей женой в
+								комментариях к выложенной фотографии!»
+							</p>
+							<h4 class="slider-reviews__author">
+								Николай Петров
+							</h4>
+							<p class="slider-reviews__author-desc">
+								25 лет, водитель трамвая
+							</p>
+						</div>
+					</div>
+					<div class="slider-reviews__item">
+						<div class="slider-reviews__list">
+							<img class="slider-reviews__img" src="images/icon/quotes.svg" alt="quotes">
+							<p class="slider-reviews__text text">
+								«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+								привычные серые вещи! А еще я познакомился со своей будущей женой в
+								комментариях к выложенной фотографии!»
+							</p>
+							<h4 class="slider-reviews__author">
+								Светлана Ивлева
+							</h4>
+							<p class="slider-reviews__author-desc">
+								23 лет, студент
+							</p>
+						</div>
+					</div>
+					<div class="slider-reviews__item">
+						<div class="slider-reviews__list">
+							<img class="slider-reviews__img" src="images/icon/quotes.svg" alt="quotes">
+							<p class="slider-reviews__text text">
+								«Это приложение перевернуло мой мир и позволило по-новому взглянуть на
+								привычные серые вещи! А еще я познакомился со своей будущей женой в
+								комментариях к выложенной фотографии!»
+							</p>
+							<h4 class="slider-reviews__author">
+								Константин Березин
+							</h4>
+							<p class="slider-reviews__author-desc">
+								28 лет, повар
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="price">
+			<div class="container">
+					<div class="price__content">
+						<div class="price__header-flex">
+							<div class="price__header-license">
+								<span class="price__header-license-type">БАЗА</span>
+								<span class="price__header-license-price">1,99 USD</span>
+							</div>
+							<div class="price__header-license price__header-license--hit">
+								<span class="price__header-license-type">СТАНДАРТ</span>
+								<span class="price__header-license-price">3,99 USD</span>
+							</div>
+							<div class="price__header-license">
+								<span class="price__header-license-type">АНЛИМ</span>
+								<span class="price__header-license-price">9,99 USD</span>
+							</div>
+						</div>
+						<div class="price__included-flex">
+							<div class="price__included-desc">
+								<span>Розовый фильтр</span>
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/yes.svg" alt="yes">
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/yes.svg" alt="yes">
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/yes.svg" alt="yes">
+							</div>
+						</div>
+						<div class="price__included-flex">
+							<div class="price__included-desc">
+								<span>Смайлики</span>
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/yes.svg" alt="yes">
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/no.svg" alt="yes">
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/yes.svg" alt="yes">
+							</div>
+						</div>
+						<div class="price__included-flex">
+							<div class="price__included-desc">
+								<span>Комментарии</span>
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/no.svg" alt="yes">
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/no.svg" alt="yes">
+							</div>
+							<div class="price__included-icon">
+								<img class="price__icon" src="images/icon/yes.svg" alt="yes">
+							</div>
+						</div>
+					</div>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="container">
+				<div class="contact-wrap">
+					<h2 class="contact__title title">
+						Остались вопросы?<span class="display-block">Свяжитесь с нами!</span>
+					</h2>
+				</div>
+				<div class="contact__inner">
+					<div class="contact__list">
+						<div class="contact__item">
+							<span class="contact__subtitle subtitle">Звоните:</span>
+							<a class="contact__phone" href="tel:78125556666">+7 (812) 555-66-66</a>
+						</div>
+						<div class="contact__item">
+							<span class="contact__subtitle subtitle">Приезжайте в гости:</span>
+							<a class="contact__adres" href="#">ул. Большая
+								Конюшенная, 19/8</a>
+						</div>
+						<div class="contact__item">
+							<span class="contact__subtitle subtitle">Пишите:</span>
+							<a class="contact__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="contact__map-clip">
+				<img class="contact__map-img" src="images/map.jpg" alt="map">
+			</div>
+		</section>
+
 	</main>
 
-	<footer></footer>
+	<footer class="footer">
+		<div class="container">
+			<div class="footer__inner">
+				<a class="footer__logo" href="#">
+					<img class="footer__img" src="images/icon/logo-footer.png" alt="logo">
+				</a>
+				<div class="footer__social-list">
+					<div class="footer__social-item">
+						<a class="footer__social-link" href="#">
+							<img class="footer__social-img" src="images/icon/twitter.svg" alt="twitter">
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a class="footer__social-link" href="#">
+							<img class="footer__social-img" src="images/icon/facebook.svg" alt="facebook">
+						</a>
+					</div>
+					<div class="footer__social-item">
+						<a class="footer__social-link" href="#">
+							<img class="footer__social-img" src="images/icon/youtube.svg" alt="youtube">
+						</a>
+					</div>
+				</div>
+				<div class="footer__dev">
+					<p class="footer__text">Разработано</p>
+					<a class="footer__dev-logo" href="#">
+						<img class="footer__dev-img" src="images/icon/html academy.svg" alt="logo"></a>
+				</div>
+			</div>
+		</div>
+	</footer>
 
 
 	<script src="js/main.min.js"></script>
