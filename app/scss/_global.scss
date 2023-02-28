@@ -12,6 +12,8 @@ body {
 	line-height: 3rem;
 	color: $text-darkBlue;
 	@extend %OpenSans-400;
+	display: flex;
+	flex-direction: column;
 }
 
 .main {
@@ -41,11 +43,18 @@ body {
 .btn {
 	padding: 2rem 3.1rem;
 	font-size: 2.1rem;
+	line-height: 1.8rem;
 	color: $color-white;
 	@extend %OpenSans-700;
 	border: 0.3rem solid #FFFFFF;
 	border-radius: 2.9rem;
 	display: inline-block;
+	transition: all .5s;
+	&:hover{
+		background: $color-white;
+		color: $accent-pink;
+		box-shadow: 0px 5px 7px rgba(1, 1, 1, 0.75);
+	}
 }
 
 .display-block {
