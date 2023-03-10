@@ -42,7 +42,7 @@
 		transition: all .5s;
 		&:hover{
 			color: $accent-pink;
-			border-bottom: 0.1rem solid $color-white;
+			// border-bottom: 0.1rem solid $color-white;
 		}
 	}
 }
@@ -450,19 +450,44 @@
 
 .photo {
 	padding-top: 10rem;
-	&__desc{
-		text-align: center;
+	&__title-box{
 		margin-bottom: 9.7rem;
 	}
+	&__title{
+		text-align: center;
+	}
 }
-.photo__content{
-	margin-bottom: 6.7rem;
+.photo__content--full{
+	margin-bottom: 5rem;
 }
 .photo-item {
 	max-width: 30rem;
 	margin-bottom: 5.3rem;
+	&--full{
+		max-width: 100%;
+	}
 	&:nth-child(n+4){
 		margin-bottom: 0;
+	}
+	&__img-box--full{
+		position: relative;
+		&::before{
+			content: 'ПАНОРАМА ДНЯ';
+			position: absolute;
+			display: block;
+			font-size: 1.2rem;
+			line-height: 2.4rem;
+			color: $color-white;
+			@extend %OpenSans-700;
+			text-transform: uppercase;
+			padding: 1.3rem 2rem;
+			background: $accent-pink;
+			top: 5.4rem;
+			right: 13rem;
+		}
+	}
+	&__img--full{
+		width: 100vw;
 	}
 	&__wrap{
 		display: flex;
@@ -473,6 +498,11 @@
 	&__content-box{
 		padding: 3.1rem 2.7rem 3rem;
 		background: $color-bg;
+	}
+	&__content-box--full{
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 	}
 	&__comment{
 		margin-bottom: 1rem;
@@ -518,83 +548,48 @@
 			cursor: pointer;
 		}
 	}
+	&__comment-like--full{
+		margin-right: 4rem;
+		&::before{
+			right: -3rem;
+		}
+	}
 }
-.photo-item--full {
-	max-width: 100%;
-}
-.photo-item__img-box{
-	
-}
-// .photo-item {
-// 	&__img-box{
-// 		display: flex;
-// 		justify-content: center;
-// 		position: relative;
-// 		&::before{
-// 			content: 'ПАНОРАМА ДНЯ';
-// 			position: absolute;
-// 			display: block;
-// 			font-size: 1.2rem;
-// 			line-height: 2.4rem;
-// 			color: $color-white;
-// 			@extend %OpenSans-700;
-// 			text-transform: uppercase;
-// 			padding: 1.3rem 2rem;
-// 			background: $accent-pink;
-// 			top: 5.4rem;
-// 			right: 0;
-// 		}
-// 	}
-// 	&__img--full{
-// 		max-width: 100vw;
-// 	}
-// 	&__content-box{
-// 		padding: 3.1rem 3.9rem 3.1rem 2.7rem;
-// 		background: $color-bg;
-// 	}
-// 	&__comment{
-// 		margin-bottom: 1.4rem;
-// 		display: flex;
-// 		justify-content: space-between;
-// 	}
-// 	&__comment-author{
-// 		font-size: 1.4rem;
-// 		line-height: 2.4rem;
-// 		@extend %OpenSans-700;
-// 	}
-// 	&__comment-time{
-// 		font-size: 1.2rem;
-// 		@extend %OpenSans-300;
-// 		text-transform: uppercase;
-// 	}
-// 	&__comment-like{
-// 		position: relative;
-// 		&::before{
-// 			content: '';
-// 			position: absolute;
-// 			display: block;
-// 			background-image: url('../images/icon/heart.svg');
-// 			width: 1.3rem;
-// 			height: 1.2rem;
-// 			right: -2rem;
-//     		top: 0.5rem;
-// 			cursor: pointer;
-// 		}
-// 	}
-// 	&__comment-liked{
-// 		font-size: 1.2rem;
-// 		line-height: 2.4rem;
-// 		@extend %OpenSans-400;
-// 		color: $accent-pink;
-// 		text-transform: uppercase;
-// 	}
-// 	&__comment-text{
-// 		font-size: 1.4rem;
-// 		line-height: 2.4rem;
-// 		@extend %OpenSans-400;
-// 	}
-// }
 
+.dowloud {
+	padding: 6.7rem 0 2.8rem;
+	&__title-box{
+		text-align: center;
+		margin-bottom: 7.5rem;
+	}
+}
+.form-dowloud {
+	padding: 5.7rem 6rem 5.7rem 8rem;
+	background: $color-bg;
+	display: flex;
+	justify-content: space-between;
+	&__crop-wrap{
+		display: flex;
+		align-items: center;
+		position: relative;		
+		&::after{
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 0.1rem;
+			bottom: -1.3rem;
+			background: $text-darkBlue;
+			opacity: 0.1;
+		}
+	}
+	// &__input{
+	// 	margin: 0 3rem 0 4.8rem;
+	// 	width: 28.8rem;
+	// 	height: 0.2rem;
+	// 	background: $text-darkBlue;
+	// 	border: none;
+	// }
+}
 
 
 
