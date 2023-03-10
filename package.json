@@ -8,7 +8,7 @@
   },
   "author": "E_Markova",
   "license": "ISC",
-  "homepage": "",
+  "homepage": "https://github.com/EMarkova22/app-Pink.git",
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "del": "^6.0.0",
