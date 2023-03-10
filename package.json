@@ -8,11 +8,10 @@
   },
   "author": "E_Markova",
   "license": "ISC",
-  "homepage": "https://github.com/EMarkova22/app-Pink.git",
+  "homepage": "https://emarkova22.github.io/app-Pink/",
   "devDependencies": {
     "browser-sync": "^2.27.11",
     "del": "^6.0.0",
-    "gh-pages": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-concat": "^2.6.1",
